@@ -1,1 +1,1 @@
-# LTSM-VAE-Procedural-Animation-Generation
+## Procedural Animation Generation Using LSTM-VAE
