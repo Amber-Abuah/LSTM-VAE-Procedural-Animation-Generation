@@ -3,6 +3,7 @@ import ast
 import torch
 import torch.nn as nn
 from torch.utils.data import TensorDataset, DataLoader
+import shutil
 
 batch_size = 4
 num_epochs = 20000
@@ -124,8 +125,10 @@ train(model, optimizer, num_epochs, device=device)
 gen_dir = "generated_animation_data"
 sample_outputs = 15
 
-if not os.path.exists(gen_dir):
-    os.makedirs(gen_dir)
+if os.path.exists(gen_dir):
+    shutil.rmtree(gen_dir)
+
+os.makedirs(gen_dir)
 
 for i in range(sample_outputs):
     gen_anim = model.generate_sample()

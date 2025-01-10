@@ -1,6 +1,6 @@
 import bpy
 import os
-
+import shutil 
 # Convert input animations to a series of quaternion rotations for the VAE
 
 in_dir = "input_animations" # Original animations to use for training
@@ -8,8 +8,10 @@ out_dir = "input_animation_data" # Converted animations stored as .txt
 armature_name = "Armature"
 animation_max_frames = 100
 
-if not os.path.exists(out_dir):
-    os.makedirs(out_dir)
+if os.path.exists(out_dir):
+    shutil.rmtree(out_dir)
+
+os.makedirs(out_dir)
 
 animations = os.listdir(in_dir)
 

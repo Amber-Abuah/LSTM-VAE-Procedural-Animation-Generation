@@ -1,6 +1,7 @@
 import bpy
 import ast
 import os
+import shutil
 
 # Converted generated data from VAE to FBX files
 
@@ -11,8 +12,10 @@ character_model_path = "character_rig/Character.fbx"
 generated_anim_path = "generated_animation_data" # Generated rotations as text data (outputted from the VAE)
 out_fbx_path = "generated_fbx"
 
-if not os.path.exists(out_fbx_path):
-    os.makedirs(out_fbx_path)
+if os.path.exists(out_fbx_path):
+    shutil.rmtree(out_fbx_path)
+
+os.makedirs(out_fbx_path)
 
 # Empty scene
 bpy.ops.object.mode_set(mode='OBJECT')
