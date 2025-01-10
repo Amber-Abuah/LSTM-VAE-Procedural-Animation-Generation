@@ -26,7 +26,14 @@ The generated animations should automatically smoothly transition from frame to 
 ### Notes
 - **bpy_convert_input.py** assumes all animations have the same named bones, in the same order. To deal with this, rename similar bones and ensure the bone order when written to and read from a file remain in the exact same order.
 - You can use [fake-bpy-module](https://github.com/nutti/fake-bpy-module) to access the Blender Python API for code completion within your IDE.
-- Ensure that _animation_max_frames_ in **bpy_convert_input.py** and **bpy_convert_gen_data.py** and _seq_length_ in **lstm_vae.py** all have the same value.  
+- Ensure that _animation_max_frames_ in **bpy_convert_input.py** and **bpy_convert_gen_data.py** and _seq_length_ in **lstm_vae.py** all have the same value.
+
+#### Folder Structure
+- _character_rig_ contains the rigged model for the generated animations to be applied to.
+- _generated_animation_data_ contains the generated animation data as a series of rotations for each bone.
+- _generated_fbx_ contains the generated animations as FBX files which can be used in other software etc.
+- _input_animation_data_ contains the training animation data as a series of rotations.
+- _input_animations_ contains the set of FBX animations to be used to train the VAE.
 
 ### Example Details
 The example uses and trains the VAE on animations downloaded from [Mixamo](https://www.mixamo.com/#/).  
