@@ -21,6 +21,6 @@ The generated animations should automatically smoothly transition from frame to 
 - **bpy_convert_input.py** assumes all animations have the same named bones, in the same order. To deal with this, rename similar bones and ensure the bone order when written to and read from a file remain in the exact same order.
 - You can use [fake-bpy-module](https://github.com/nutti/fake-bpy-module) to access the Blender Python API for code completion within your IDE.
 
-### Example Detail
-The example uses and trains the VAE on animations downloaded from [Mixamo](https://www.mixamo.com).
-The dataset only contains 16 animations, yet still produces realistic animations.
+### Example Details
+The example uses and trains the VAE on animations downloaded from [Mixamo](https://www.mixamo.com/#/).  
+The dataset only contains 16 animations, yet still produces realistic animations.  
